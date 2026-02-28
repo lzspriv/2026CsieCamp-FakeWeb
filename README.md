@@ -8,6 +8,7 @@
 
 - 透過仿真頁面情境，提醒使用者辨識可疑網域與釣魚風險
 - 強調「外觀相同不代表來源可信」的網路安全觀念
+請特別注意：**判斷網站真偽時，應優先檢查完整網域名稱（Domain）**，而不是只看頁面外觀是否相似。
 
 ## 教學部署網域
 
@@ -16,4 +17,15 @@
 - https://www.csie.ntnu.edu.tw/
 - https://www.csie.ntnu.eud.one/
 
-請特別注意：**判斷網站真偽時，應優先檢查完整網域名稱（Domain）**，而不是只看頁面外觀是否相似。
+## 搜尋引擎收錄防護（請勿移除）
+
+為避免教學用假網站出現在搜尋結果中，專案已加入以下設定：
+
+- 根目錄 [robots.txt](robots.txt)：
+	- `User-agent: *`
+	- `Disallow: /`
+- 首頁 [index.html](index.html) `<head>`：
+	- `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">`
+	- `<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">`
+
+請勿在教學期間移除上述設定，以降低本頁面被搜尋引擎收錄或保留摘要的機率。
